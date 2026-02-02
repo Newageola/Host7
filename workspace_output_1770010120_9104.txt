@@ -1,0 +1,21 @@
+Testing all HTML files for JavaScript errors...
+=== dashboard.html ===
+Found 10 functions
+Total script tags: 1
+=== editor.html ===
+Found 32 functions
+Total script tags: 1
+=== filemanager.html ===
+Total script tags: 1
+=== index.html ===
+Found 16 functions
+Total script tags: 1
+=== login.html ===
+Found 3 functions
+Total script tags: 1
+=== register.html ===
+Found 3 functions
+Total script tags: 1
+=== terminal.html ===
+Found 24 functions
+Total script tags: 1

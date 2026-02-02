@@ -1,0 +1,13 @@
+index.html:121:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+index.html:223:                      'Owner: Olawale Abdul-Ganiyu Adeshina');
+index.html:228:                      'Owner: Olawale Abdul-Ganiyu Adeshina');
+index.html:289:            alert('Adegan95 Global Enterprise\n\nOwner: Olawale Abdul-Ganiyu Adeshina\n\nA comprehensive web development platform with advanced file management, intelligent coding assistance, and real-time user tracking.');
+index.html:409:                        <p style="margin-top: 20px; color: #666;">Owner: Olawale Abdul-Ganiyu Adeshina</p>
+filemanager.html:107:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+filemanager.html:550:                { name: 'index.html', content: '<!DOCTYPE html>\n<html>\n<head>\n    <title>' + folderName + '</title>\n    <style>body{font-family:Arial,sans-serif;margin:50px;}</style>\n</head>\n<body>\n    <h1>Welcome to ' + folderName + '</h1>\n    <p>This site was deployed from Adegan95 Global Enterprise</p>\n    <p>Owner: Olawale Abdul-Ganiyu Adeshina</p>\n</body>\n</html>' },
+editor.html:269:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+terminal.html:295:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+terminal.html:405:            addTerminalOutput('info', 'Owner: Olawale Abdul-Ganiyu Adeshina');
+login.html:134:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+register.html:155:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+dashboard.html:193:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>

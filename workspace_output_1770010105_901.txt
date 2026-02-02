@@ -1,0 +1,2 @@
+107:        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+550:                { name: 'index.html', content: '<!DOCTYPE html>\n<html>\n<head>\n    <title>' + folderName + '</title>\n    <style>body{font-family:Arial,sans-serif;margin:50px;}</style>\n</head>\n<body>\n    <h1>Welcome to ' + folderName + '</h1>\n    <p>This site was deployed from Adegan95 Global Enterprise</p>\n    <p>Owner: Olawale Abdul-Ganiyu Adeshina</p>\n</body>\n</html>' },
