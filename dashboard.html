@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Adegan95 Global Enterprise</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .welcome-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .access-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .access-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .access-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .recent-activity {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📊 Dashboard</h1>
+        <p class="subtitle">Adegan95 Global Enterprise - User Dashboard</p>
+        <nav>
+            <div class="dropdown">
+                <button class="dropdown-btn">☰ Dashboard Menu ▼</button>
+                <div class="dropdown-content">
+                    <a href="index.html">🏠 Home</a>
+                    <a href="filemanager.html">📁 File Manager</a>
+                    <a href="editor.html">📝 Code Editor</a>
+                    <a href="terminal.html">💻 Terminal</a>
+                    <a href="#" onclick="logout()">🚪 Logout</a>
+                    <a href="#" onclick="showProfile()">👤 My Profile</a>
+                    <a href="#" onclick="showSettings()">⚙️ Settings</a>
+                </div>
+            </div>
+            <a href="index.html">🏠 Home</a>
+            <a href="filemanager.html">📁 File Manager</a>
+            <a href="editor.html">📝 Editor</a>
+            <a href="terminal.html">💻 Terminal</a>
+            <a href="#" onclick="logout()" class="btn btn-danger">🚪 Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="dashboard-header">
+            <div class="welcome-section">
+                <div>
+                    <h2 id="welcomeMessage">Welcome Back!</h2>
+                    <p style="font-size: 1.1rem;">Manage your projects and files with ease</p>
+                    <div class="user-info" id="userInfo">
+                        <p><strong>Name:</strong> <span id="userName">Loading...</span></p>
+                        <p><strong>Email:</strong> <span id="userEmail">Loading...</span></p>
+                        <p><strong>Member Since:</strong> <span id="userSince">Loading...</span></p>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-success" onclick="window.location.href='filemanager.html'">📁 Manage Files</button>
+                    <button class="btn btn-primary" onclick="window.location.href='editor.html'">📝 Edit Code</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="totalFiles">0</h3>
+                <p>Total Files</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalFolders">0</h3>
+                <p>Total Folders</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalDeployments">0</h3>
+                <p>Deployments</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalEdits">0</h3>
+                <p>Code Edits</p>
+            </div>
+        </div>
+
+        <!-- Quick Access -->
+        <h2 style="margin-bottom: 1rem;">⚡ Quick Access</h2>
+        <div class="quick-access">
+            <div class="access-card" onclick="window.location.href='filemanager.html'">
+                <div class="icon">📁</div>
+                <h3>File Manager</h3>
+                <p>Upload, organize, and manage your files</p>
+            </div>
+            <div class="access-card" onclick="window.location.href='editor.html'">
+                <div class="icon">📝</div>
+                <h3>Code Editor</h3>
+                <p>Edit HTML, CSS, JS with AI assistance</p>
+            </div>
+            <div class="access-card" onclick="window.location.href='terminal.html'">
+                <div class="icon">💻</div>
+                <h3>Terminal</h3>
+                <p>Monitor users and view logs</p>
+            </div>
+            <div class="access-card" onclick="deploySite()">
+                <div class="icon">🚀</div>
+                <h3>Deploy Site</h3>
+                <p>Generate URL for your website</p>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity" style="margin-top: 2rem;">
+            <h2>📜 Recent Activity</h2>
+            <div id="recentActivityList" style="max-height: 300px; overflow-y: auto; margin-top: 1rem;">
+                <p style="color: var(--text-secondary);">Loading recent activity...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Adegan95 Global Enterprise. All rights reserved.</p>
+        <p>Owner: <span class="owner">Olawale Abdul-Ganiyu Adeshina</span></p>
+    </footer>
+
+    <script>
+        // Get current user
+        let currentUser = null;
+        
+        function initDashboard() {
+            currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Update user info
+            document.getElementById('userName').textContent = currentUser.name || 'User';
+            document.getElementById('userEmail').textContent = currentUser.email;
+            document.getElementById('welcomeMessage').textContent = `Welcome, ${currentUser.name || 'User'}!`;
+            
+            // Get user registration date
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === currentUser.email);
+            if (user && user.createdAt) {
+                document.getElementById('userSince').textContent = new Date(user.createdAt).toLocaleDateString();
+            }
+            
+            // Update statistics
+            updateStatistics();
+            
+            // Load recent activity
+            loadRecentActivity();
+            
+            // Track activity
+            trackActivity('User accessed dashboard');
+        }
+        
+        function updateStatistics() {
+            // Count files and folders
+            const fileSystem = JSON.parse(localStorage.getItem('fileSystem') || '{}');
+            let fileCount = 0;
+            let folderCount = 0;
+            
+            function countItems(obj) {
+                if (!obj) return;
+                for (let key in obj) {
+                    if (obj[key].type === 'file') {
+                        fileCount++;
+                    } else if (obj[key].type === 'folder') {
+                        folderCount++;
+                        if (obj[key].children) {
+                            countItems(obj[key].children);
+                        }
+                    }
+                }
+            }
+            
+            if (fileSystem.root && fileSystem.root.children) {
+                countItems(fileSystem.root.children);
+            }
+            
+            document.getElementById('totalFiles').textContent = fileCount;
+            document.getElementById('totalFolders').textContent = folderCount;
+            
+            // Count deployments
+            const deployments = JSON.parse(localStorage.getItem('deployments') || '[]');
+            document.getElementById('totalDeployments').textContent = deployments.length;
+            
+            // Count edits (from activities)
+            const activities = JSON.parse(localStorage.getItem('activities') || '[]');
+            const edits = activities.filter(a => a.action.includes('edit') || a.action.includes('saved'));
+            document.getElementById('totalEdits').textContent = edits.length;
+        }
+        
+        function loadRecentActivity() {
+            const activities = JSON.parse(localStorage.getItem('activities') || '[]');
+            const container = document.getElementById('recentActivityList');
+            
+            if (activities.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-secondary);">No recent activity</p>';
+                return;
+            }
+            
+            container.innerHTML = activities.slice(0, 10).map(activity => `
+                <div style="padding: 0.75rem; border-bottom: 1px solid var(--border-color);">
+                    <p><strong>${activity.action}</strong></p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                        ${new Date(activity.timestamp).toLocaleString()} | 
+                        ${activity.location || 'Unknown'}
+                    </p>
+                </div>
+            `).join('');
+        }
+        
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('currentUser');
+                trackActivity('User logged out');
+                window.location.href = 'login.html';
+            }
+        }
+        
+        function showProfile() {
+            alert(`Profile Information\n\nName: ${currentUser.name || 'N/A'}\nEmail: ${currentUser.email}\n\nMember Since: ${document.getElementById('userSince').textContent}`);
+        }
+        
+        function showSettings() {
+            alert('Settings functionality coming soon!\n\nYou will be able to:\n• Change password\n• Update profile\n• Manage notifications\n• Customize dashboard');
+        }
+        
+        function deploySite() {
+            window.location.href = 'index.html';
+        }
+        
+        function trackActivity(action) {
+            const activities = JSON.parse(localStorage.getItem('activities') || '[]');
+            activities.unshift({
+                action: action,
+                timestamp: new Date().toISOString(),
+                location: 'dashboard.html',
+                user: currentUser ? currentUser.email : 'guest'
+            });
+            
+            if (activities.length > 50) activities.pop();
+            localStorage.setItem('activities', JSON.stringify(activities));
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initDashboard);
+    </script>
+</body>
+</html>
